@@ -51,7 +51,7 @@
     "ember-cli-babel": "^5.1.6",
     "ember-browserify": "^1.1.13",
     "ember-cli-less": "1.5.3",
-    "lodash": "^4.16.3",
+    "lodash": "^4.16.3"
 
   },
   "ember-addon": {

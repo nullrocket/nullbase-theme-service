@@ -27,6 +27,7 @@ export function initialize( application ) {
         document.styleSheets[ document.styleSheets.length - 1 ].insertRule(rule, index);
         instance.get('_insertedStyles').push(this.getRuleSelector(rule));
       }
+      console.log(rule);
     },
     deleteInstanceRules( instance ){
       if(document.styleSheets[ document.styleSheets.length - 1 ].cssRules) {
@@ -42,6 +43,7 @@ export function initialize( application ) {
         });
         instance.set("_insertedStyles", []);
       }
+
     },
     getRuleSelector( rule ){
       return _.trim(rule.split("{")[ 0 ].replace(/\s\s+/g, ' '));

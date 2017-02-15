@@ -22,22 +22,26 @@ export function initialize( application ) {
     },
 
     insertRule( rule, instance ){
-      let index = document.styleSheets[ document.styleSheets.length -1 ].cssRules.length;
-      document.styleSheets[ document.styleSheets.length -1 ].insertRule(rule, index);
-      instance.get('_insertedStyles').push(this.getRuleSelector(rule));
+      if(document.styleSheets[ document.styleSheets.length - 1 ].cssRules) {
+        let index = document.styleSheets[ document.styleSheets.length - 1 ].cssRules.length;
+        document.styleSheets[ document.styleSheets.length - 1 ].insertRule(rule, index);
+        instance.get('_insertedStyles').push(this.getRuleSelector(rule));
+      }
     },
     deleteInstanceRules( instance ){
-      _.each(instance.get("_insertedStyles"), function ( selectorText ) {
-        var index = _.findIndex(document.styleSheets[ document.styleSheets.length -1 ].cssRules, function ( cssRule ) {
+      if(document.styleSheets[ document.styleSheets.length - 1 ].cssRules) {
+        _.each(instance.get("_insertedStyles"), function ( selectorText ) {
+          var index = _.findIndex(document.styleSheets[ document.styleSheets.length - 1 ].cssRules, function ( cssRule ) {
 
-          return cssRule.selectorText === selectorText;
+            return cssRule.selectorText === selectorText;
+          });
+          //console.log(index);
+          if ( index >= 0 ) {
+            document.styleSheets[ document.styleSheets.length - 1 ].deleteRule(index);
+          }
         });
-        //console.log(index);
-        if ( index >= 0 ) {
-          document.styleSheets[ document.styleSheets.length -1 ].deleteRule(index);
-        }
-      });
-      instance.set("_insertedStyles", []);
+        instance.set("_insertedStyles", []);
+      }
     },
     getRuleSelector( rule ){
       return _.trim(rule.split("{")[ 0 ].replace(/\s\s+/g, ' '));

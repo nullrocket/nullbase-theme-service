@@ -4,9 +4,6 @@ import getThemes from "../utils/get-themes";
 
 export function initialize( application ) {
 
-  console.log('initializing the theme service');
-
-
   var themeService = Ember.Service.extend({
     themes: Ember.computed(getThemes),
     init(){
@@ -27,7 +24,7 @@ export function initialize( application ) {
         document.styleSheets[ document.styleSheets.length - 1 ].insertRule(rule, index);
         instance.get('_insertedStyles').push(this.getRuleSelector(rule));
       }
-      console.log(rule);
+
     },
     deleteInstanceRules( instance ){
       if(document.styleSheets[ document.styleSheets.length - 1 ].cssRules) {

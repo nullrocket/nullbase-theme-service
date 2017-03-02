@@ -45,7 +45,7 @@ module.exports = {
 
   },
   preBuild: function () {
-    console.log('Pre Build Theme');
+    console.log('Pre Building Theme');
     var self = this;
     if ( this.app.project.pkg[ 'ember-addon' ] && !this.app.project.pkg[ 'ember-addon' ].paths ) {
       this.iconDirectory = path.resolve(this.app.project.root, path.join('tests', 'dummy', 'app', 'icons'));

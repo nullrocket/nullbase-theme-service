@@ -1,9 +1,11 @@
 import Ember from 'ember';
 import _ from "npm:lodash";
+console.log(_);
 export default Ember.Mixin.create({
   themeService: Ember.inject.service('theme-service'),
   init: function () {
     this._super(...arguments);
+    console.log("lodash",_);
     this.insertRule = _.bind(this.get('themeService').insertRule,this.get('themeService'));
     let self = this;
     let themeSettingsForItem = this.get('themeService').get('themes')[ 0 ][ this.get('className') ];

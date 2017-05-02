@@ -1,6 +1,6 @@
 {
   "name": "nullbase-theme-service",
-  "version": "0.0.4-alpha",
+  "version": "0.0.5-alpha",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -52,8 +52,7 @@
     "xxhashjs": "^0.2.1",
     "ember-browserify": "^1.1.13",
     "ember-cli-less": "1.5.3",
-    "lodash": "^4.16.3"
-
+    "lodash": "^4.17.4"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

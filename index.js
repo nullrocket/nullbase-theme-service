@@ -69,7 +69,7 @@ module.exports = {
 
     var fingerPrint = "";
     var allIcons = [];
-    walk(this.iconDirectory, function ( err, results ) {
+    walk(self.iconDirectory, function ( err, results ) {
       allIcons = _.map(results, function ( file ) {
         return reload(file);
       });

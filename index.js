@@ -44,8 +44,11 @@ module.exports = {
     if ( typeof app.import !== 'function' && app.app ) {
       app = app.app;
     }
-
+      console.log('app');
+    console.log(app);
     selfx.app = app;
+    console.log('selfx');
+    console.log(selfx);
 
   },
   preBuild: function () {

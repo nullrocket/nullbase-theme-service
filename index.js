@@ -33,29 +33,33 @@ var walk = function ( dir, done ) {
     })();
   });
 };
+var selfx = null;
 module.exports = {
   name: 'nullbase-theme-service',
-
+  init: function(){
+    this._super.init && this._super.init.apply(this, arguments);
+    selfx = this;
+  },
   included: function ( app ) {
     if ( typeof app.import !== 'function' && app.app ) {
       app = app.app;
     }
 
-    this.app = app;
+    selfx.app = app;
 
   },
   preBuild: function () {
     console.log('Pre Building Theme');
-    var self = this;
-    if ( this.app.project.pkg[ 'ember-addon' ] && !this.app.project.pkg[ 'ember-addon' ].paths ) {
-      this.iconDirectory = path.resolve(this.app.project.root, path.join('tests', 'dummy', 'app', 'icons'));
-      this.styleDirectory = path.resolve(this.app.project.root, path.join('tests', 'dummy', 'app', 'styles'));
-      this.publicDirectory = path.resolve(this.app.project.root, path.join('tests', 'dummy', 'public', 'nullbase-icons'));
+    var self = selfx;
+    if ( self.app.project.pkg[ 'ember-addon' ] && !self.app.project.pkg[ 'ember-addon' ].paths ) {
+      self.iconDirectory = path.resolve(self.app.project.root, path.join('tests', 'dummy', 'app', 'icons'));
+      self.styleDirectory = path.resolve(self.app.project.root, path.join('tests', 'dummy', 'app', 'styles'));
+      self.publicDirectory = path.resolve(self.app.project.root, path.join('tests', 'dummy', 'public', 'nullbase-icons'));
     }
     else {
-      this.iconDirectory = path.join(this.app.project.root, 'app', 'icons');
-      this.styleDirectory = path.join(this.app.project.root, 'app', 'styles');
-      this.publicDirectory = path.join(this.app.project.root, 'public', 'nullbase-icons');
+      self.iconDirectory = path.join(self.app.project.root, 'app', 'icons');
+      self.styleDirectory = path.join(self.app.project.root, 'app', 'styles');
+      self.publicDirectory = path.join(self.app.project.root, 'public', 'nullbase-icons');
     }
     //var nullbaseTheme = this.addonsFactory.project.config(process.env.EMBER_ENV).nullbaseTheme;
 

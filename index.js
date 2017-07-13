@@ -44,15 +44,12 @@ module.exports = {
     if ( typeof app.import !== 'function' && app.app ) {
       app = app.app;
     }
-      console.log('app');
-    console.log(app);
+
     selfx.app = app;
-    console.log('selfx');
-    console.log(selfx);
 
   },
   preBuild: function () {
-    console.log('Pre Building Theme');
+
     var self = selfx;
     if ( self.app.project.pkg[ 'ember-addon' ] && !self.app.project.pkg[ 'ember-addon' ].paths ) {
       self.iconDirectory = path.resolve(self.app.project.root, path.join('tests', 'dummy', 'app', 'icons'));

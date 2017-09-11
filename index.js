@@ -39,25 +39,25 @@ module.exports = {
   init: function(){
     try {
       this._super.init && this._super.init.apply(this, arguments);
-      selfx = this;
+     // selfx = this;
     }
     catch(e){
       console.log(e);
     }
   },
- /* included: function ( app ) {
+  included: function ( app ) {
     try {
       if ( typeof app.import !== 'function' && app.app ) {
-        app = app.app;
+        this.app = app.app;
       }
 
-      selfx.app = app;
+      //selfx.app = app;
     }
     catch(e){
       console.log(e);
     }
 
-  },*/
+  },
   preBuild: function () {
 /*
     var self = selfx;

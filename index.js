@@ -35,7 +35,8 @@ var walk = function ( dir, done ) {
 };*/
 var selfx = null;
 module.exports = {
-  name: 'nullbase-theme-service', init: function(){
+  name: 'nullbase-theme-service',
+  init: function(){
     try {
       this._super.init && this._super.init.apply(this, arguments);
       selfx = this;
@@ -44,7 +45,7 @@ module.exports = {
       console.log(e);
     }
   },
-  included: function ( app ) {
+ /* included: function ( app ) {
     try {
       if ( typeof app.import !== 'function' && app.app ) {
         app = app.app;
@@ -56,7 +57,7 @@ module.exports = {
       console.log(e);
     }
 
-  },
+  },*/
   preBuild: function () {
 /*
     var self = selfx;

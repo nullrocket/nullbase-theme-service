@@ -1,10 +1,11 @@
 {
   "name": "nullbase-theme-service",
-  "version": "0.0.16-alpha",
+  "version": "0.0.17-alpha",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
     "test": "tests"
+
   },
   "scripts": {
     "build": "ember build",

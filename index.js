@@ -49,7 +49,7 @@ module.exports = {
 
   },
   preBuild: function () {
-
+/*
     var self = selfx;
     if ( self.app.project.pkg[ 'ember-addon' ] && !self.app.project.pkg[ 'ember-addon' ].paths ) {
       self.iconDirectory = path.resolve(self.app.project.root, path.join('tests', 'dummy', 'app', 'icons'));
@@ -134,5 +134,6 @@ module.exports = {
 
       }
     });
+  */
   }
 };

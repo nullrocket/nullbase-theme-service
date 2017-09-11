@@ -35,19 +35,28 @@ var walk = function ( dir, done ) {
 };*/
 var selfx = null;
 module.exports = {
-  name: 'nullbase-theme-service',
-/*  init: function(){
-    this._super.init && this._super.init.apply(this, arguments);
-    selfx = this;
+  name: 'nullbase-theme-service', init: function(){
+    try {
+      this._super.init && this._super.init.apply(this, arguments);
+      selfx = this;
+    }
+    catch(e){
+      console.log(e);
+    }
   },
   included: function ( app ) {
-    if ( typeof app.import !== 'function' && app.app ) {
-      app = app.app;
+    try {
+      if ( typeof app.import !== 'function' && app.app ) {
+        app = app.app;
+      }
+
+      selfx.app = app;
+    }
+    catch(e){
+      console.log(e);
     }
 
-    selfx.app = app;
-
-  },*/
+  },
   preBuild: function () {
 /*
     var self = selfx;

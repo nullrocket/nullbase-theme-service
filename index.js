@@ -1,6 +1,6 @@
 /* jshint node: true */
 'use strict';
-/*var path = require('path');
+var path = require('path');
 var jsonfile = require('jsonfile');
 var XXH = require('xxhashjs').h32;
 var fse = require('fs-extra');
@@ -32,20 +32,20 @@ var walk = function ( dir, done ) {
       });
     })();
   });
-};*/
+};
 var selfx = null;
 module.exports = {
   name: 'nullbase-theme-service',
   init: function(){
     try {
       this._super.init && this._super.init.apply(this, arguments);
-     // selfx = this;
+      selfx = this;
     }
     catch(e){
       console.log(e);
     }
   },
-  included: function ( app ) {
+/*  included: function ( app ) {
     try {
       if ( typeof app.import !== 'function' && app.app ) {
         this.app = app.app;
@@ -57,9 +57,9 @@ module.exports = {
       console.log(e);
     }
 
-  },
+  },*/
   preBuild: function () {
-/*
+
     var self = selfx;
     if ( self.app.project.pkg[ 'ember-addon' ] && !self.app.project.pkg[ 'ember-addon' ].paths ) {
       self.iconDirectory = path.resolve(self.app.project.root, path.join('tests', 'dummy', 'app', 'icons'));
@@ -144,6 +144,6 @@ module.exports = {
 
       }
     });
-  */
+
   }
 };

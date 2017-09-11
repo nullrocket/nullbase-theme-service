@@ -1,6 +1,6 @@
 /* jshint node: true */
 'use strict';
-var path = require('path');
+/*var path = require('path');
 var jsonfile = require('jsonfile');
 var XXH = require('xxhashjs').h32;
 var fse = require('fs-extra');
@@ -32,11 +32,11 @@ var walk = function ( dir, done ) {
       });
     })();
   });
-};
+};*/
 var selfx = null;
 module.exports = {
   name: 'nullbase-theme-service',
-  init: function(){
+/*  init: function(){
     this._super.init && this._super.init.apply(this, arguments);
     selfx = this;
   },
@@ -47,7 +47,7 @@ module.exports = {
 
     selfx.app = app;
 
-  },
+  },*/
   preBuild: function () {
 /*
     var self = selfx;

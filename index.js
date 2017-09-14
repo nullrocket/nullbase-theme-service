@@ -45,19 +45,19 @@ module.exports = {
       console.log(e);
     }
   },
-/*  included: function ( app ) {
+  included: function ( app ) {
     try {
       if ( typeof app.import !== 'function' && app.app ) {
         this.app = app.app;
       }
 
-      //selfx.app = app;
+      selfx.app = app;
     }
     catch(e){
       console.log(e);
     }
 
-  },*/
+  },
   preBuild: function () {
 
     var self = selfx;
